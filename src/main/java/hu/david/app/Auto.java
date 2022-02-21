@@ -1,5 +1,8 @@
 package hu.david.app;
 
+
+import java.time.LocalDate;
+
 public class Auto {
 
     private String rendSzam = null;
@@ -62,12 +65,29 @@ public class Auto {
 
     // Eldönti, hogy sokat vagy keveset fogyaszt
     // egy sorba: return this.fogyasztas<6 ? true:false;
-    public boolean kevesetFogyasztEldont(){
+    public boolean kevesetFogyasztEldont() {
         boolean valasz = false;
-        if (this.fogyasztas<6){
+        if (this.fogyasztas < 6) {
             valasz = true;
         } else {
             valasz = false;
+        }
+        return valasz;
+    }
+
+    public String getEvjaratKategoria() {
+        String valasz = null;
+        int autoKor = LocalDate.now().getYear() - this.gyartasiEv;
+        if (autoKor >=0 && autoKor <= 3) {
+            valasz = "újszerű";
+        } else if (autoKor >= 4 && autoKor <= 10) {
+            valasz = "használt";
+        } else if (autoKor >= 11 && autoKor <= 29) {
+            valasz = "öreg";
+        } else if (autoKor>=30){
+            valasz = "veterán";
+        } else {
+            valasz = "Hibás adat!";
         }
         return valasz;
     }

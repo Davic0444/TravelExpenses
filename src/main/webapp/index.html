@@ -8,7 +8,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #2B2B2B">
     <div class="container my-4">
         <h1 class="display-4 text-center">Útiköltség kalkulátor</h1>
         <h3>Gépjármű adatai</h3>
@@ -42,6 +42,15 @@
             </div>
             <br>
             <hr>
+            <h3>Útvonal adatai</h3>
+            <div class="form-group">
+                <label for="hosszKm">Útvonal hossza(Km)*</label>
+                <input type="number" class="form-control" name="hosszKm" id="hosszKm" required>
+            </div>
+            <div class="form-group">
+                <label for="uzemAnyagAr">Üzemanyag ár(Ft)*</label>
+                <input type="number" class="form-control" name="uzemAnyagAr" id="uzemAnyagAr" required>
+            </div>
             <input type="submit" class="btn btn-primary" value="SZÁMOL">
 
         </form>
